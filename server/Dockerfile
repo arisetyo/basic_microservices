@@ -1,10 +1,10 @@
 FROM node:latest
 
-COPY . /src
+COPY . /usr/src/server
 
-WORKDIR /src
+WORKDIR /usr/src/server
 
-RUN npm install --production
+RUN npm install
 
 EXPOSE 3000
 

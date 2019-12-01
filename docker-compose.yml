@@ -8,7 +8,7 @@ services:
   server:
     build: './server'
     ports:
-      - "3001:3000"
+      - "3001:3001"
     depends_on: 
       - db
     environment:
@@ -19,13 +19,13 @@ services:
     ports:
       - "27017:27017"
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./web/build:/srv/www/static
-      - ./default.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - web
-      - server
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./web/build:/srv/www/static
+  #     - ./default.conf:/etc/nginx/conf.d/default.conf
+  #   depends_on:
+  #     - web
+  #     - server

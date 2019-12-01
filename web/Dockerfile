@@ -1,11 +1,11 @@
 FROM node:latest
 
-COPY . /src
+COPY . /usr/src/web
 
-WORKDIR /src
+WORKDIR /usr/src/web
 
-RUN npm install --production
+RUN npm install
 
 EXPOSE 3000
 
-CMD npm build
+CMD npm start

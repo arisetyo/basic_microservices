@@ -4,9 +4,10 @@
   "description": "hexa institute front-end web application",
   "main": "index.js",
   "scripts": {
-    "start": "node dev_server.js",
     "test": "node_modules/mocha/bin/_mocha --opts ./mocha.opts",
-    "build": "webpack"
+    "start-express-server": "node server.js",
+    "start-webpack-server": "node dev_server.js",
+    "start": "webpack"
   },
   "author": "Arie M. Prasetyo",
   "license": "ISC",

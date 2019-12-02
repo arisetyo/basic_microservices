@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha --opts ./mocha.opts",
-    "start-express-server": "node server.js",
+    "start": "node index.js",
     "start-webpack-server": "node dev_server.js",
-    "start": "webpack"
+    "build": "webpack"
   },
   "author": "Arie M. Prasetyo",
   "license": "ISC",

@@ -25,7 +25,7 @@ class Student extends Component {
 		return (
 			<div className={styles.Student}>
 				<h1>Student module</h1>
-				<Button onClick={this.onCreate}>Create +</Button>
+				<Button onClick={this.onCreate}>Add student +</Button>
 			</div>
 		);
 	}

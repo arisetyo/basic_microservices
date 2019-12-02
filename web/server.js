@@ -1,27 +1,13 @@
-/**
- * hot-loading server for development
- * @author: Arie M. Prasetyo (2019)
- */
+import path from 'path';
+import express from 'express';
 
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+const port = 3000;
+const app = express();
 
-/**
- * Webpack dev server implementation to allow for React Hot Loader usage.
- *
- * Sourced from https://github.com/gaearon/react-hot-boilerplate
- */
-new WebpackDevServer(webpack(config), {
-	publicPath: config.output.publicPath,
-	hot: true,
-	historyApiFallback: true,
-	headers: { 'Access-Control-Allow-Origin': '*' }
-}).listen(config.devServer.port, config.devServer.host, function(err, result) {
-	if (err) {
-		//noinspection Eslint
-		console.log(err); // eslint-disable-line
-		process.exit(1);
-	}
-	console.log('Listening at http://' + config.devServer.host + ':' + config.devServer.port); // eslint-disable-line
+const staticPath = path.join(__dirname, '/build');
+app.use(express.static(staticPath));
+
+app.listen(port, '0.0.0.0', function onStart(err) {
+  if (err) console.log(err);
+  console.info('Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
 });

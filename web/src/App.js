@@ -12,7 +12,12 @@ import styles from './App.css';
 const App = () => (
 	<HashRouter>
 		<div className={styles.App}>
-			Hexa Institute
+			<Navigation/>
+			<Content>
+				<Route path="/" exact component={Home} />
+
+				<Route path="/student" component={Student}/>
+			</Content>
 		</div>
 	</HashRouter>
 );

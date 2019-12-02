@@ -21,16 +21,16 @@ services:
         /usr/local/bin/node ./index.js
       '
 
-  # server:
-  #   build: './server'
-  #   ports:
-  #     - "3001:3001"
-  #   depends_on: 
-  #     - db
-  #   environment:
-  #     - MONGO_DB_URI=mongodb://db/hexa
+  server:
+    build: './server'
+    ports:
+      - "3001:3001"
+    depends_on: 
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/hexa
 
-  # db:
-  #   image: mongo
-  #   ports:
-  #     - "27017:27017"
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
